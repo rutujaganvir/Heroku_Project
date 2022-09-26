@@ -1,0 +1,42 @@
+{% extends 'layout.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+<title>All data</title>
+{% endblock%}
+
+{% block content %}
+<center><h2>Laptop Details </h2></center>
+<div class="container">
+    <div class="jumbotron">
+        <table border="4px" class="table">
+            <thead class="thead-dark">
+            <tr >
+                <th>Laptop Name </th>
+                <th>Company Name  </th>
+                <th>RAM </th>
+                <th>ROM</th>
+                <th>Price  </th>
+                <th>Processor  </th>
+                <th>Update</th>
+                 <th>Delete</th>
+            </tr>
+            </thead>
+            {% for x in pdata %}
+            <tr class="table-danger">
+                <td>{{ x.laptopname }}</td>
+                <td>{{ x.laptopcompany }}</td>
+                <td>{{ x.laptopram }}</td>
+                <td>{{ x.laptoprom }}</td>
+                <td>{{ x.laptopprice }}</td>
+                <td>{{ x.laptopprocessor }}</td>
+                <td><button  class="btn btn-warning" ><a href="{% url 'update' x.id %}">Update </a></button></td>
+                <td><button  class="btn btn-danger" ><a href="{% url 'delete' x.id%}">Delete</a></button></td>
+            </tr>
+            {% endfor %}
+        </table>
+      <br><hr>
+    </div>
+</div>
+
+{% endblock %}

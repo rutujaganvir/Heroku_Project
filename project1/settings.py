@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic'
+    'whitenoise.runserver_nostatic',
+    'whitenoise.runserver_nostaticdjango',
     'django.contrib.staticfiles',
     'app1',
     'crispy_forms'
@@ -139,4 +140,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# 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 git token
+# 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 git token
